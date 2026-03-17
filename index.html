@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ff9a00,#ffd000);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+.mm{
+    border:2px solid black;
+    padding:10px;
+    border-radius:8px;
+    background:#f2f2f2;
+    margin-bottom:15px;
+}
+
+.mm input{
+    width:40px;
+    padding:5px;
+    margin:5px;
+    text-align:center;
+    font-size:16px;
+}
+
+select{
+    padding:5px;
+    font-size:16px;
+}
+
+button{
+    padding:8px 20px;
+    font-size:16px;
+    border:none;
+    border-radius:5px;
+    background:orange;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:red;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="mm">
+
+<input type="text" id="first">
+
+<select id="ope">
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+</select>
+
+<input type="text" id="second">
+
+=
+
+<input type="text" id="res" readonly>
+
+</div>
+
+<button onclick="ress()">Calculate</button>
+
+</div>
+
+
+<script>
+
+function ress(){
+
+var ope1 = document.getElementById("first").value;
+var ope2 = document.getElementById("second").value;
+var ope = document.getElementById("ope").value;
+
+if(ope=="+"){
+res = parseInt(ope1) + parseInt(ope2);
+}
+
+if(ope=="-"){
+res = parseInt(ope1) - parseInt(ope2);
+}
+
+if(ope=="*"){
+res = parseInt(ope1) * parseInt(ope2);
+}
+
+if(ope=="/"){
+res = parseInt(ope1) / parseInt(ope2);
+}
+
+document.getElementById("res").value = res;
+
+}
+
+</script>
+
+</body>
+</html>
